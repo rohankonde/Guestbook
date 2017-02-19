@@ -4,6 +4,6 @@
     <url>/cron/emailcronjob</url>
     <target>beta</target>
     <description>daily post digest</description>
-    <schedule>every 1 minutes</schedule>
+    <schedule>every 15 minutes</schedule>
   </cron>
 </cronentries>

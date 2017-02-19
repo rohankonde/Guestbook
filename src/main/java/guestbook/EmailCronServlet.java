@@ -17,11 +17,10 @@ public class EmailCronServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
 		System.out.println("Cron Job Executed");
-		resp.sendRedirect("/newpost.jsp");
 		try {
 			_logger.info("Cron Job has been executed");
 
-			  String to = "rohankonde@yahoo.com";//change accordingly  
+			  String to = "hari96k@gmail.com";//change accordingly  
 		      String from = "rohankonde@utexas.edu";
 		      String host = "localhost";//or IP address  
 		  
@@ -39,7 +38,7 @@ public class EmailCronServlet extends HttpServlet {
 	         message.setText("Hello, this is example of sending email  ");  
 	  
 	         // Send message  
-	         //Transport.send(message);  
+	         Transport.send(message);  
 	         System.out.println("message sent successfully....");  
 
 		} catch (Exception ex) {
