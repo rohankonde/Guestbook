@@ -26,6 +26,8 @@ public class EmailCronServlet extends HttpServlet {
 	    String host = "localhost";//or IP address 
 	    
 	    Properties properties = new Properties();  
+	    properties.put("mail.smtp.host", "mail.javatpoint.com");
+	    properties.put("mail.smtp.auth", "true");
 	    Session session = Session.getDefaultInstance(properties, null);  
 	    
 	    Message message = new MimeMessage(session);  
@@ -81,6 +83,7 @@ public class EmailCronServlet extends HttpServlet {
 		    } catch (MessagingException e) {
 		    	System.out.println("shittymessaghe");
 		    } catch (Exception ex) {
+		    	System.out.println(ex.toString());
 				// Log any exceptions in your Cron Job
 				System.out.println("FAILED TO SEND MESSAGE");
 			}

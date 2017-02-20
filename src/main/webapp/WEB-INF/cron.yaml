@@ -1,5 +1,5 @@
 cron: 
 - description: daily posts
   url: /cron/emailcronjob
-  schedule: every 13 minutes
+  schedule: every day 17:00
   timezone: America/Chicago
