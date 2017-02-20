@@ -38,6 +38,10 @@ public class Greeting implements Comparable<Greeting> {
     public String getDate(){
     	return date.toString();
     }
+    
+    public Date getDateObject(){
+    	return date;
+    }
 
     @Override
     public int compareTo(Greeting other) {

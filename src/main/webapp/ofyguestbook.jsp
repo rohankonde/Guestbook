@@ -51,6 +51,12 @@
 		if (guestbookName == null) {
 			guestbookName = "default";
 		}
+		
+		String subscribed = request.getParameter("subscribed");
+		if(subscribed == null){
+			subscribed = "NO";
+		}
+		pageContext.setAttribute("subscribed", subscribed);
 
 		pageContext.setAttribute("guestbookName", guestbookName);
 		UserService userService = UserServiceFactory.getUserService();
@@ -76,9 +82,28 @@
 			<form action="/history" method="post">
 				<input class="btn btn-primary" type="submit" value="View Post Archive">
 			</form>
-		</div>	
+		</div>
+			
 	</div>
-
+	<%
+			if(subscribed.equals("YES")){
+		%>
+		<div class = "row" style="margin-top:10px">
+		<div class="col-sm-1">
+			<form action="/subscribe" method="post">
+				<input class="btn btn-primary" type="submit" value="Unsubscribe">
+			</form>
+		</div></div>
+		<%
+			}else{
+		%>
+		<div class = "row" style="margin-top:10px">
+		<div class="col-sm-1">
+			<form action="/subscribe" method="post">
+				<input class="btn btn-primary" type="submit" value="Subscribe">
+			</form>
+		</div></div>
+		<% } %>	
 	<%
 		} else {
 	%>
@@ -88,7 +113,13 @@
 			href="<%=userService.createLoginURL(request.getRequestURI())%>">Sign
 			in</a> to post.
 	</p>
-
+	<div class="row" style="margin-top:10px">
+		<div class="col-sm-1">
+			<form action="/history" method="post">
+				<input class="btn btn-primary" type="submit" value="View Post Archive">
+			</form>
+		</div>	
+	</div>
 
 	<%
 		}

@@ -16,6 +16,14 @@
 		<welcome-file>ofyguestbook.jsp</welcome-file>
 	</welcome-file-list>
 	<servlet>
+		<servlet-name>Subscribe</servlet-name>
+		<servlet-class>guestbook.SubscriptionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Subscribe</servlet-name>
+		<url-pattern>/subscribe</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>EmailCronServlet</servlet-name>
 		<servlet-class>guestbook.EmailCronServlet</servlet-class>
 	</servlet>
